@@ -55,22 +55,22 @@ export const projects: Project[] = [
 export const socialLinks = [
   {
     name: "Email",
-    value: "your@email.com",
-    href: "mailto:your@email.com",
+    value: "yusufnazarow20090505@gmail.com",
+    href: "mailto:yusufnazarow20090505@gmail.com",
   },
   {
     name: "Telegram",
-    value: "@yourhandle",
-    href: "https://t.me/yourhandle",
+    value: "@Yusuf_Nazar0v",
+    href: "https://t.me/Yusuf_Nazar0v",
   },
   {
     name: "GitHub",
-    value: "github.com/yourusername",
-    href: "https://github.com/yourusername",
+    value: "github.com/Nazarow-fullstack",
+    href: "https://github.com/Nazarow-fullstack",
   },
   {
     name: "LinkedIn",
-    value: "linkedin.com/in/yourprofile",
-    href: "https://linkedin.com/in/yourprofile",
+    value: "linkedin.com/in/yusuf-nazarov",
+    href: "https://www.linkedin.com/in/yusuf-nazarov-7b2872341/",
   },
 ];

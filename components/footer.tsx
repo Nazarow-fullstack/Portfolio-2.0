@@ -17,22 +17,22 @@ export function Footer() {
 
           <div className="flex space-x-4 mb-4 md:mb-0">
             <Button variant="ghost" size="icon" asChild>
-              <Link href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <Link href="https://github.com/Nazarow-fullstack" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                 <Github className="h-5 w-5" />
               </Link>
             </Button>
             <Button variant="ghost" size="icon" asChild>
-              <Link href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <Link href="https://www.linkedin.com/in/yusuf-nazarov-7b2872341/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
                 <Linkedin className="h-5 w-5" />
               </Link>
             </Button>
             <Button variant="ghost" size="icon" asChild>
-              <Link href="mailto:your@email.com" aria-label="Email">
+              <Link href="mailto:yusufnazarow20090505@gmail.com" aria-label="Email">
                 <Mail className="h-5 w-5" />
               </Link>
             </Button>
             <Button variant="ghost" size="icon" asChild>
-              <Link href="https://t.me/yourhandle" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+              <Link href="https://t.me/Yusuf_Nazar0v" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
                 <MessageSquare className="h-5 w-5" />
               </Link>
             </Button>
