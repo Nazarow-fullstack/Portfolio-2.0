@@ -20,9 +20,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={cn(inter.className, "antialiased")}>
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-         <div classname="p-[20px]">
-           {children}
-         </div>
+          {children}
         </ThemeProvider>
       </body>
     </html>
