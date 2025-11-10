@@ -63,7 +63,7 @@ export function HeroSection() {
                   5000,
                   ''
                 ]}
-                wrapper="pre"
+                wrapper="span"
                 speed={80}
                 repeat={Infinity}
                 cursor={true}
