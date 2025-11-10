@@ -4,8 +4,13 @@ import { ArrowDownCircle } from "lucide-react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
+import { useIsMobile } from "@/hooks/useIsMobile";
+import dynamic from 'next/dynamic';
+
 
 export function HeroSection() {
+  const isMobile = useIsMobile();
+
   return (
     <section 
       id="home" 
@@ -14,11 +19,32 @@ export function HeroSection() {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-          
+          {!isMobile && (
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              className="p-6 rounded-2xl bg-card/50 backdrop-blur-lg border border-border/20 shadow-lg"
+            >
+              <div className="w-full bg-black/50 rounded-lg p-4 font-mono text-sm text-primary min-h-[250px]">
+                <TypeAnimation
+                  sequence={[
+                    '// Yusuf Nazarov: Engineer\'s Log\n\nconst mission = {\n  goal: "Build Exceptional Web Experiences",\n  stack: ["Next.js", "Python", "Three.js"],\n  focus: "Clean, Scalable Architecture"\n};\n\nfunction createSolution(idea) {\n  if (idea.isValid) {\n    return new FullStackApp(idea);\n  }\n}\n\n// Ready to build something amazing.',
+                    5000,
+                    ''
+                  ]}
+                  wrapper="span"
+                  speed={80}
+                  repeat={Infinity}
+                  cursor={true}
+                  style={{ whiteSpace: 'pre-wrap', display: 'block' }}
+                />
+              </div>
+            </motion.div>
+          )}
 
-          {/* Леваяколонка: Основной текст */}
           <motion.div 
-            className="text-center lg:text-left"
+            className={`text-center ${isMobile ? 'lg:text-center' : 'lg:text-left'} ${isMobile ? 'col-span-1' : ''}`}
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -45,30 +71,6 @@ export function HeroSection() {
               <Button variant="outline" size="lg" asChild>
                 <Link href="#contact">Contact Me</Link>
               </Button>
-            </div>
-          </motion.div>
-
-
-          {/* Правая  колонка: Голографическая консоль */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="hidden lg:block p-6 rounded-2xl bg-card/50 backdrop-blur-lg border border-border/20 shadow-lg"
-          >
-            <div className="w-full bg-black/50 rounded-lg p-4 font-mono text-sm text-primary min-h-[250px]">
-              <TypeAnimation
-                sequence={[
-                  '// Yusuf Nazarov: Engineer\'s Log\n\nconst mission = {\n  goal: "Build Exceptional Web Experiences",\n  stack: ["Next.js", "Python", "Three.js"],\n  focus: "Clean, Scalable Architecture"\n};\n\nfunction createSolution(idea) {\n  if (idea.isValid) {\n    return new FullStackApp(idea);\n  }\n}\n\n// Ready to build something amazing.',
-                  5000,
-                  ''
-                ]}
-                wrapper="span"
-                speed={80}
-                repeat={Infinity}
-                cursor={true}
-                style={{ whiteSpace: 'pre-wrap', display: 'block' }}
-              />
             </div>
           </motion.div>
 
