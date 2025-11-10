@@ -14,7 +14,7 @@ interface MousePosition {
 }
 
 function MousePosition(): MousePosition {
-  const [mousePosition, setMousePosition] = useState<MousePosition>({
+  const [mousePosition,  setMousePosition] = useState<MousePosition>({
     x: 0,
     y: 0,
   });
