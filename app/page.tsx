@@ -5,12 +5,9 @@ import { ProjectsSection } from '@/components/projects-section';
 import { ContactSection } from '@/components/contact-section';
 import { Footer } from '@/components/footer';
 
-
 export default function Home() {
   return (
-    <div>
-      
-<main className="min-h-screen flex flex-col">
+    <main className="min-h-screen flex flex-col container mx-auto px-4 sm:px-6 lg:px-8">
       <Navbar />
       <HeroSection />
       <AboutSection />
@@ -18,7 +15,5 @@ export default function Home() {
       <ContactSection />
       <Footer />
     </main>
-    </div>
-    
   );
 }

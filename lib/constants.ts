@@ -4,51 +4,36 @@ export interface Project {
   description: string;
   techStack: string[];
   image: string;
-  link?: string;
-  github?: string;
 }
 
 export const projects: Project[] = [
   {
     id: 1,
-    title: "FixIt – AI-Powered Service Marketplace",
-    description: "A web app where users can post problems and pros can offer services. Integrated an AI advisor that helps users describe their problems better using OpenAI API.",
-    techStack: ["Next.js", "Tailwind", "OpenAI API", "Zustand"],
-    image: "https://images.pexels.com/photos/4963622/pexels-photo-4963622.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    github: "https://github.com/yourusername/fixit",
+    title: "Instagram Clone | Full-Stack Social Media",
+    description: "Full-stack replica with a Next.js frontend and a FastAPI & Firebase backend. Features secure auth, real-time chat, and advanced image processing.",
+    techStack: ["Next.js", "FastAPI", "Firebase", "WebSockets", "Tailwind"],
+    image: "/projects/instagram.png",
   },
   {
     id: 2,
-    title: "Instagram Forum Clone",
-    description: "A forum-like clone of Instagram built with Next.js. Users can post, comment, and view others' posts.",
-    techStack: ["Next.js", "Tailwind CSS", "React Router", "Firebase"],
-    image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    github: "https://github.com/yourusername/instagram-clone",
+    title: "Handify | Full-Stack Crowdsourcing Platform",
+    description: "A problem-solving hub built with a React frontend and a robust Django/DRF backend to manage all user interactions and data.",
+    techStack: ["React", "Django", "DRF", "PostgreSQL", "AI"],
+    image: "/projects/handify.png",
   },
   {
     id: 3,
-    title: "Portfolio Landing Page",
-    description: "A clean and animated dark-themed portfolio landing page for developers/designers.",
-    techStack: ["Next.js", "Tailwind", "Framer Motion"],
-    image: "https://images.pexels.com/photos/927629/pexels-photo-927629.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    link: "https://yourportfolio.com",
-    github: "https://github.com/yourusername/portfolio",
+    title: "EduFinder | Geospatial Search Application",
+    description: "Built an interactive map with React & Leaflet, supported by a high-performance Python backend for complex, location-based queries.",
+    techStack: ["React", "Python", "Leaflet", "REST API"],
+    image: "/projects/edufinder.png",
   },
   {
     id: 4,
-    title: "Telegram Excel Bot + Azure Integration",
-    description: "Built a Telegram bot in Python that allows admins to upload Excel files and manage them through Azure Cloud.",
-    techStack: ["Python", "Azure Blob Storage", "Telegram Bot API"],
-    image: "https://images.pexels.com/photos/7014337/pexels-photo-7014337.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    github: "https://github.com/yourusername/telegram-excel-bot",
-  },
-  {
-    id: 5,
-    title: "3D Product Marketplace (Hackathon Idea)",
-    description: "Concept for a realistic marketplace with 3D product viewing. Developed product demo with Three.js and integrated user flows.",
-    techStack: ["React", "Three.js", "Zustand"],
-    image: "https://images.pexels.com/photos/4464816/pexels-photo-4464816.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
-    github: "https://github.com/yourusername/3d-marketplace",
+    title: "Alif Shop Clone | E-commerce Application",
+    description: "Engineered a complete e-commerce storefront with React and TypeScript, powered by a FastAPI backend to manage products, inventory, and orders.",
+    techStack: ["React", "TypeScript", "FastAPI", "SQLAlchemy"],
+    image: "/projects/alif.png",
   },
 ];
 

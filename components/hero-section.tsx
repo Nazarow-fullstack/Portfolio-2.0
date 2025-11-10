@@ -1,60 +1,81 @@
+"use client";
 import { Button } from "@/components/ui/button";
-import { ArrowDownCircle, Github } from "lucide-react";
+import { ArrowDownCircle } from "lucide-react";
 import Link from "next/link";
+import { motion } from "framer-motion";
+import { TypeAnimation } from "react-type-animation";
 
 export function HeroSection() {
   return (
     <section 
       id="home" 
-      className="min-h-screen flex flex-col justify-center pt-16 relative overflow-hidden"
+      className="min-h-screen flex items-center relative overflow-hidden"
     >
-      {/* Enhanced background elements */}
-      <div className="absolute top-40 -left-32 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-float" />
-      <div className="absolute bottom-40 right-10 w-80 h-80 bg-primary/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
-      <div className="absolute top-1/4 right-1/4 w-64 h-64 bg-secondary/5 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
+      <div className="container mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
 
-      <div className="container mx-auto z-10">
-        <div className="max-w-3xl space-y-8">
-          <div className="space-y-2 stagger-animation">
-            <p className="text-sm md:text-base text-primary font-medium tracking-wider uppercase animate-slideIn">
-              Frontend Developer
-            </p>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
-              Hi, I'm Yusuf
-              <span className="block text-primary mt-2">— a 16 y.o Frontend Developer</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl">
-              crafting modern, responsive, and sleek websites.
-            </p>
-          </div>
+          
 
-          <p className="text-lg text-muted-foreground max-w-2xl animate-fadeIn" style={{ animationDelay: '0.5s' }}>
-            Passionate about building beautiful UI with Tailwind, React, and Next.js. Always learning, always building.
-          </p>
+          {/* Леваяколонка: Основной текст */}
+          <motion.div 
+            className="text-center lg:text-left"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+          >
+            <div className="space-y-4">
+              <p className="text-base text-primary font-semibold tracking-wider uppercase">
+                Full-Stack Engineer
+              </p>
+              <h1 className="text-5xl md:text-6xl font-bold tracking-tight text-foreground">
+                Yusuf Nazarov
+              </h1>
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-muted-foreground to-foreground">
+                — Architecting Digital Experiences
+              </h2>
+              <p className="text-lg text-muted-foreground max-w-xl mx-auto lg:mx-0">
+                I build robust, scalable, and beautiful web applications from end to end. From designing RESTful APIs with Python to crafting pixel-perfect UIs with Next.js, I bring ideas to life with clean and efficient code.
+              </p>
+            </div>
 
-          <div className="flex flex-wrap gap-4 pt-4 animate-fadeIn" style={{ animationDelay: '0.7s' }}>
-            <Button size="lg" className="group relative overflow-hidden" asChild>
-              <Link href="#projects">
-                <span className="relative z-10">See My Work</span>
-                <div className="absolute inset-0 bg-primary transform transition-transform group-hover:scale-x-[1.1] group-hover:scale-y-[1.2] origin-center" />
-              </Link>
-            </Button>
-            <Button variant="outline" size="lg" className="gradient-border" asChild>
-              <Link href="#contact">
-                Contact Me
-              </Link>
-            </Button>
-            <Button variant="ghost" size="icon" className="ml-1 rounded-full" asChild>
-              <Link href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
-                <Github className="h-5 w-5" />
-                <span className="sr-only">GitHub</span>
-              </Link>
-            </Button>
-          </div>
+            <div className="flex flex-wrap gap-4 pt-8 justify-center lg:justify-start">
+              <Button size="lg" className="shadow-lg shadow-primary/20" asChild>
+                <Link href="#projects">See My Work</Link>
+              </Button>
+              <Button variant="outline" size="lg" asChild>
+                <Link href="#contact">Contact Me</Link>
+              </Button>
+            </div>
+          </motion.div>
+
+
+          {/* Правая  колонка: Голографическая консоль */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="hidden lg:block p-6 rounded-2xl bg-card/50 backdrop-blur-lg border border-border/20 shadow-lg"
+          >
+            <div className="w-full bg-black/50 rounded-lg p-4 font-mono text-sm text-primary min-h-[250px]">
+              <TypeAnimation
+                sequence={[
+                  '// Yusuf Nazarov: Engineer\'s Log\n\nconst mission = {\n  goal: "Build Exceptional Web Experiences",\n  stack: ["Next.js", "Python", "Three.js"],\n  focus: "Clean, Scalable Architecture"\n};\n\nfunction createSolution(idea) {\n  if (idea.isValid) {\n    return new FullStackApp(idea);\n  }\n}\n\n// Ready to build something amazing.',
+                  5000,
+                  ''
+                ]}
+                wrapper="pre"
+                speed={80}
+                repeat={Infinity}
+                cursor={true}
+                style={{ whiteSpace: 'pre-wrap', display: 'block' }}
+              />
+            </div>
+          </motion.div>
+
         </div>
       </div>
 
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex justify-center animate-float">
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex justify-center animate-bounce">
         <Link href="#about" aria-label="Scroll to about section">
           <ArrowDownCircle className="h-10 w-10 text-muted-foreground/50 hover:text-primary transition-colors" />
         </Link>
